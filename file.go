@@ -1,13 +1,13 @@
 package utils
 
 import (
+	"bytes"
+	"crypto/md5"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
 	"time"
-	"io"
-	"bytes"
-	"crypto/md5"
 )
 
 // CountFileInPath return number of files in path except directory
@@ -92,7 +92,7 @@ func ReadFile(path string) ([]byte, error) {
 }
 
 // DeleteFile delete a file
-func DeleteFile(path string) error{
+func DeleteFile(path string) error {
 	return os.Remove(path)
 }
 
